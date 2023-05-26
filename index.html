@@ -78,19 +78,23 @@
               <p>And much more!</p>
             </li>
           </ul>
-          <form action="/success.html" id="newsletter-form">
-            <div class="form-labels">
-              <label for="email">Email address</label>
-              <p class="error">Valid Email Required</p>
+          <form action="/success.html" id="newsletter-form" class="grid--md">
+            <div class="grid--sm">
+              <div class="form-labels items-start">
+                <label for="email"><small>Email address</small></label>
+                <p class="hidden" id="error-msg">
+                  <small>Valid Email Required</small>
+                </p>
+              </div>
+              <input
+                type="email"
+                id="email"
+                placeholder="email@company.com"
+                class="error"
+              />
             </div>
-            <input
-              type="email"
-              id="email"
-              placeholder="email@company.com"
-              required
-            />
             <button type="submit" class="btn">
-              Subscribe to our monthly newsletter
+              Subscribe to monthly newsletter
             </button>
           </form>
         </div>

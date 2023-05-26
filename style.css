@@ -12,6 +12,18 @@ img, svg {
   max-width: 100%;
 }
 
+button, 
+input,
+label {
+  font: inherit;
+  border: none;
+  background-color: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
 
 :root {
   /* font */
@@ -26,6 +38,7 @@ img, svg {
   --email : hsl(231, 7%, 60%);
   --text : hsl(234, 29%, 20%);
   --error : hsl(4, 100%, 67%);
+  --error-soft: hsl(3, 75%, 86%);
   color-scheme: light;
 
   /* spacing */
@@ -40,7 +53,7 @@ img, svg {
   --round--lg : 100vmax;
 
   /* transitions */
-  --ease-elastic : ease-in-out;
+  --ease-elastic : cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 body {
@@ -52,11 +65,36 @@ body {
 h1 {
   font-weight: bold;
   font-size: var(--fs-heading);
+  line-height: 1.1;
 }
 
 p {
   max-width: 40ch;
 }
+
+small {
+  font-size: 0.8rem;
+}
+
+/* form */
+label {
+  font-weight: bold;
+}
+
+input {
+  padding: 1rem;
+  padding-left: 1.3rem;
+  color: var(--email);
+  border: 0.5px solid var(--email);
+  border-radius: var(--round--sm);
+  width: 100%;
+}
+/* 
+input.error {
+  background-color: hsl(3, 75%, 86%);
+  box-shadow: 0 0 0 2px var(--error);
+  color: var(--error);
+} */
 
 .content {
   display: grid;
@@ -69,6 +107,31 @@ p {
   display: flex;
   flex-wrap: wrap-reverse;
 }
+
+.error-msg {
+  color: var(--error)
+}
+
+/* button styling */
+.btn {
+  background-color: var(--text);
+  color: var(--bkg);
+  padding: 1rem;
+  border-radius: var(--round--sm);
+  font-weight: 700;
+  width: 100%;
+  text-align: center;
+  transition : background-color 200ms var(--ease-elastic)
+}
+
+.btn:hover {
+  background-color: var(--bkd);
+}
+
+.btn:focus {
+  outline: 2px solid transparent;
+}
+
 
 ul[role='list'],
 ol[role='list'] {
@@ -87,6 +150,11 @@ ol[role='list'] {
   gap: var(--space--md);
 }
 
+.form-labels {
+  display: flex;
+  justify-content: space-between;
+}
+
 .grid--md {
   display: grid;
   gap: var(--space--md);
@@ -102,7 +170,7 @@ ol[role='list'] {
 }
 
 .items-start {
-  align-items: start;
+  align-items: center;
 }
 
 @media only screen and (max-width: 375px) {
