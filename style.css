@@ -1,0 +1,123 @@
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+
+:root {
+  /* font */
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  --fs-heading: 40px;
+  
+  /* colors */
+  --bkd: hsl(235, 18%, 26%);
+  --bkg: hsl(0, 0%, 100%);
+  --email : hsl(231, 7%, 60%);
+  --text : hsl(234, 29%, 20%);
+  --error : hsl(4, 100%, 67%);
+  color-scheme: light;
+
+  /* spacing */
+  --space--sm : 6px;
+  --space--md : 16px;
+  --space--lg : 24px;
+  --space--xl : 32px;
+
+  /* radius */
+  --round--sm: 0.5rem;
+  --round--md : 1rem;
+  --round--lg : 100vmax;
+
+  /* transitions */
+  --ease-elastic : ease-in-out;
+}
+
+body {
+  background-color: var(--bkd);
+  color: var(--text);
+  line-height: 1.4;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: var(--fs-heading);
+}
+
+p {
+  max-width: 40ch;
+}
+
+.content {
+  display: grid;
+  gap : var(--space--md);
+  padding: 1.2em;
+}
+
+.wrapper {
+  background-color: var(--bkg);
+  display: flex;
+  flex-wrap: wrap-reverse;
+}
+
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+
+
+/* utils */
+.hidden {
+  display: none;
+}
+
+.flex--md {
+  display: flex;
+  gap: var(--space--md);
+}
+
+.grid--md {
+  display: grid;
+  gap: var(--space--md);
+}
+
+.grid--sm {
+  display: grid;
+  gap : var(--space--sm);
+}
+
+.icon--sm {
+  flex-shrink: 0;
+}
+
+.items-start {
+  align-items: start;
+}
+
+@media only screen and (max-width: 375px) {
+    .image--desktop {
+      display:none;
+    }
+
+}
+
+@media only screen and (min-width: 375px) {
+  .image--mobile {
+    display:none;
+  }
+  .wrapper {
+    flex-wrap:nowrap;
+  }
+}
+
